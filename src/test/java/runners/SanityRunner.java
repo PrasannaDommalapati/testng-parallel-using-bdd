@@ -7,8 +7,8 @@ import io.cucumber.testng.CucumberOptions;
         tags = "",
         features = "src/test/resources/features",
         glue= {"stepDefinitions"},
-        plugin = { "pretty","html:target/cucumber-reports/report.html",
+        plugin = { "pretty","html:target/RunCuke/cucumber.html",
                 "com.cucumber.listener.ExtentCucumberFormatter"},
         monochrome = true)
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class SanityRunner extends AbstractTestNGCucumberTests {
 }

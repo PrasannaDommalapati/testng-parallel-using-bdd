@@ -29,7 +29,7 @@ public class LoginSteps{
     public void title_of_login_page_is_free_CRM(){
         String title = driver.getTitle();
         System.out.println(title);
-        Assert.assertEquals(title,"Free CRM software for customer relationship management, sales, marketing campaigns and support.");
+        Assert.assertEquals(title,"Cogmento CRM");
     }
 
     //Reg Exp:
@@ -40,7 +40,7 @@ public class LoginSteps{
 
     @Then("^user enters \"(.*)\" and \"(.*)\"$")
     public void user_enters_username_and_password(String username, String password){
-        driver.findElement(By.name("username")).sendKeys(username);
+        driver.findElement(By.name("email")).sendKeys(username);
         driver.findElement(By.name("password")).sendKeys(password);
     }
 
