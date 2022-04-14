@@ -18,7 +18,8 @@ public class LoginSteps{
 
     @Given("^user is already on Login Page$")
     public void user_already_on_login_page(){
-         System.setProperty("webdriver.chrome.driver","/Users/prasannad/Downloads/chromedriver.exe");
+         //System.setProperty("webdriver.chrome.driver","/Users/prasannad/Downloads/chromedriver.exe");
+         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://ui.freecrm.com/");
     }
