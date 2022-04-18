@@ -3,24 +3,26 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+
 
 public class LoginSteps{
 
     WebDriver driver;
 
+    public LoginSteps(LocalWebDriverManager manager){
+        this.driver = manager.getDriver();
+        System.out.println("i am here"+ (driver == null));
+
+    }
+
     @Given("^user is already on Login Page$")
     public void user_already_on_login_page(){
-         //System.setProperty("webdriver.chrome.driver","/Users/prasannad/Downloads/chromedriver.exe");
-         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
         driver.get("https://ui.freecrm.com/");
     }
 

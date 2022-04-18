@@ -1,22 +1,21 @@
 package helper;
 
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.Toolkit;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.*;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
     WebDriver webDriver;
@@ -124,21 +123,21 @@ public class BasePage {
         }
     }
 
-    public WebElement elementFinder(String locatorTpye, String value) {
+    public WebElement elementFinder(String locatorType, String value) {
 
-        if (locatorTpye.equals("id"))
+        if (locatorType.equals("id"))
             return webDriver.findElement(By.id(value));
-        else if (locatorTpye.equals("name"))
+        else if (locatorType.equals("name"))
             return webDriver.findElement(By.name(value));
-        else if (locatorTpye.equals("xpath"))
+        else if (locatorType.equals("xpath"))
             return webDriver.findElement(By.xpath(value));
-        else if (locatorTpye.equals("css"))
+        else if (locatorType.equals("css"))
             return webDriver.findElement(By.cssSelector(value));
-        else if (locatorTpye.equals("tagName"))
+        else if (locatorType.equals("tagName"))
             return webDriver.findElement(By.tagName(value));
-        else if (locatorTpye.equals("linkText"))
+        else if (locatorType.equals("linkText"))
             return webDriver.findElement(By.linkText(value));
-        else if (locatorTpye.equals("partialLinkText"))
+        else if (locatorType.equals("partialLinkText"))
             return webDriver.findElement(By.partialLinkText(value));
         else {
             System.out.println("No such element type available");
