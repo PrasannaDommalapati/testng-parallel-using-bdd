@@ -1,11 +1,11 @@
 package pageObjects;
 
-import helper.DriverManger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import stepDefinitions.LocalWebDriverManager;
 
 import java.time.Duration;
 
@@ -14,7 +14,7 @@ public class BasePage {
     public WebDriverWait fluentWait;
 
     //Constructor
-    public BasePage(DriverManger manager) {
+    public BasePage(LocalWebDriverManager manager) {
         this.driver = manager.getDriver();
         fluentWait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

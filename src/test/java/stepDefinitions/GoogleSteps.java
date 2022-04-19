@@ -10,6 +10,7 @@ public class GoogleSteps {
 
     public GoogleSteps(LocalWebDriverManager manager){
         this.driver = manager.getDriver();
+        driver.navigate().to("https://google.co.uk");
         System.out.println("i am here"+ (driver == null));
 
     }

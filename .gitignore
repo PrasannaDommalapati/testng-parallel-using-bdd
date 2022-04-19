@@ -2,3 +2,5 @@
 /target/
 .vs/
 testng-parallel-using-bdd.iml
+/extent-reports/
+/Screenshot/

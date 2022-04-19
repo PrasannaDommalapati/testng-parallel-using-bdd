@@ -2,11 +2,10 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-public class GooglePage extends BasePage{
+public class GooglePage{
     /**
      * Constructor
      */
     public GooglePage(WebDriver driver) {
-        super(driver);
     }
 }
