@@ -69,7 +69,7 @@ public class Hooks {
 
     @After
     public void afterScenario(Scenario scenario) {
-        if (!scenario.isFailed()) {
+        if (scenario.isFailed()) {
             String screenshotPath= getScreenshot(driver);
             extentTest.fail("scenario.getThrowable().getMessage()", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         }
